@@ -1,6 +1,9 @@
 #!/bin/bash
-
-for i in {1..150}
+./random.sh
+while read line
 do
-  echo $RANDOM | cat >> numbers.txt
-done
+let 'count+=1'
+sum=$(($sum+$line))
+done < number.txt
+sum=$(($sum / $count))
+echo $sum
